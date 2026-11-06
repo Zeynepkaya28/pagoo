@@ -1,25 +1,66 @@
 {
   "expo": {
-    "name": "sayfa",
-    "slug": "sayfa",
+    "name": "Pagoo",
+    "slug": "pagoo",
+    "scheme": "pagoo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "automatic",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "app.pagoo.ios",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "Profil fotoğrafını seçmek için galerine erişmemiz gerekiyor.",
+        "NSMotionUsageDescription": "Kapakların telefonun hareketine göre derinlik kazanması için."
+      }
     },
     "android": {
+      "package": "app.pagoo.android",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#1B1230",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
+      "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "single",
+      "bundler": "metro",
+      "name": "Pagoo",
+      "shortName": "Pagoo",
+      "themeColor": "#14101F",
+      "backgroundColor": "#14101F",
+      "description": "Okuduklarını kaydet, alıntı paylaş, okurları takip et."
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#F7F3EC",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "dark": {
+            "backgroundColor": "#14101F"
+          }
+        }
+      ],
+      "expo-font",
+      "expo-image",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Profil fotoğrafını seçmek için galerine erişmemiz gerekiyor."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
     }
   }
 }

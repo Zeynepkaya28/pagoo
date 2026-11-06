@@ -39,3 +39,11 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+.netlify
+dist/
+
+github-yukle.bat
+
+# Supabase anahtarlari
+.env
